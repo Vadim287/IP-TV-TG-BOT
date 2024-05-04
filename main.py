@@ -13,7 +13,7 @@ ID = os.environ.get("ID") or CONFIGDATA.get("ID", "")
 app = Client("my_bot", api_id=ID, api_hash=HASH, bot_token=TOKEN)
 
 # channles
-CHANNELS = get("https://github.com/Vadim287/IP-TV-TG-BOT/blob/main/channels.json").json()
+CHANNELS = get("https://raw.githubusercontent.com/Vadim287/IP-TV-TG-BOT/main/channels.json").json()
 print("Total Channels:",len(CHANNELS))
 CHANNELS_BY_ID = {channel.get("id","None"): channel for channel in CHANNELS}
 
