@@ -1,2 +1,7 @@
 pyrogram
 requests
+Flask==1.1.2
+Werkzeug==1.0.1
+Jinja2==2.11.2   
+MarkupSafe==1.1.1
+itsdangerous==2.0.1

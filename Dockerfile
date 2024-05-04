@@ -1,19 +1,13 @@
-FROM python:alpine
+FROM python:3.9
 
-ENV PYTHONUNBUFFERED=1
-ENV PYTHONDONTWRITEBYTECODE=1
+WORKDIR /app
 
-# Установим директорию для работы
-WORKDIR /telegram_bot
+COPY requirements.txt /app/
+RUN pip3 install -r requirements.txt
+COPY . /app
 
-COPY ./requirements.txt ./
+RUN apt-get update && \
+    apt-get install -y gcc make python3-dev
 
-# Устанавливаем зависимости и gunicorn
-RUN pip install --upgrade pip
+RUN pip3 install TgCrypto
 
-RUN pip install --no-cache-dir -r ./requirements.txt
-
-# Копируем файлы и билд
-COPY ./ ./
-
-RUN chmod -R 777 ./

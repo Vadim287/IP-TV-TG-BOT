@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPTV Channels</title>
+</head>
+<body>
+    <h1>IPTV Channels</h1>
+    <div id="channels">
+        {% for stream in streams %}
+            <div class="channel">
+                <h2>{{ stream.name }}</h2>
+                <video controls>
+                    <source src="{{ stream.url }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        {% endfor %}
+    </div>
+</body>
+</html>
+
