@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPTV Player</title>
+</head>
+<body>
+    <video id="videoPlayer" controls autoplay style="width: 100%; height: 100%;">
+        Ваш браузер не поддерживает HTML5 видео. Пожалуйста, обновите браузер.
+    </video>
+    <script>
+        // Получает параметр url из query string
+        const urlParams = new URLSearchParams(window.location.search);
+        const streamUrl = urlParams.get('url');
+        
+        // Устанавливаем источник видео
+        document.getElementById('videoPlayer').src = streamUrl;
+    </script>
+</body>
+</html>
